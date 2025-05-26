@@ -14,7 +14,10 @@ def predict_mood(request):
             stress = request.GET.get('stress')
             diet = request.GET.get('diet')
 
-            encoders = joblib.load('C:\\Users\\danie\\Documents\\script\\Django\\predictor\\encoders.pkl')
+            base_dir = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+            encoder_path = os.path.join(base_dir, 'predictor', 'models', 'encoders.pkl') 
+            encoders = joblib.load(encoder_path)
+        
             input_vector = [
                 sleep,
                 screen,

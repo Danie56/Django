@@ -17,6 +17,7 @@ def train_and_save_models():
     
     base_dir = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
     csv_path = os.path.join(base_dir, "Mental_Health_Lifestyle_CLS.csv")
+    print(base_dir)
     df = pd.read_csv(csv_path)
 
     label_encoders = {}
@@ -50,6 +51,7 @@ def train_and_save_models():
     }
 
     model_dir = os.path.join(base_dir, 'predictor', 'models')
+    print(model_dir)
     os.makedirs(model_dir, exist_ok=True)
 
     accuracies = {}
